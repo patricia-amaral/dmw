@@ -1,0 +1,25 @@
+{
+  "name": "dmw",
+  "version": "1.0.0",
+  "description": "Avaliação",
+  "homepage": "https://github.com/patricia-amaral/dmw#readme",
+  "bugs": {
+    "url": "https://github.com/patricia-amaral/dmw/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patricia-amaral/dmw.git"
+  },
+  "license": "ISC",
+  "author": "Patricia",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
