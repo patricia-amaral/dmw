@@ -10,16 +10,19 @@ const express = require('express');
       table.string('email');
     });
   }
+});
 
   app.get('/usuarios', async (req, res) => {
     const usuarios = await knex('usuarios').select('*');
     res.json(usuarios);
    });
+
    app.post('/usuarios', async (req, res) => {
     const { nome, email } = req.body;
     await knex('usuarios').insert({ nome, email });
     res.status(201).json({ mensagem: 'Usuário criado com sucesso' });
    });
+
    app.listen(3000, () => {
     console.log('Servidor rodando em http://localhost:3000');
    });
