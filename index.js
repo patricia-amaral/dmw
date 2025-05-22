@@ -1,5 +1,5 @@
 const express = require('express');
-const knex = require('./db');
+//const knex = require('./db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -53,19 +53,19 @@ app.post('/login', async (req, res) => {
     res.json(mensagens);
    });
 
-const express = require('express');
- const knex = require('./db');
- //const app = express();
- app.use(express.json());
- knex.schema.hasTable('usuarios').then(exists => {
-  if (!exists) {
-    return knex.schema.createTable('usuarios', table => {
-      table.increments('id');
-      table.string('nome');
-      table.string('email');
-    });
-  }
-});
+// const express = require('express');
+// const knex = require('./db');
+// const app = express();
+//  app.use(express.json());
+//  knex.schema.hasTable('usuarios').then(exists => {
+//   if (!exists) {
+//     return knex.schema.createTable('usuarios', table => {
+//       table.increments('id');
+//       table.string('nome');
+//       table.string('email');
+//     });
+//   }
+// });
 
   app.get('/usuarios', async (req, res) => {
     const usuarios = await knex('usuarios').select('*');

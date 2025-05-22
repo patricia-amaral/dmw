@@ -19,7 +19,7 @@ const knex = require('knex')({
     senha: '123456'
    }).then(() => console.log("Usuário inserido"));
 
-   nex('usuarios').select('*')
+   knex('usuarios').select('*')
    .then(usuarios => {
      console.log(usuarios);
    });

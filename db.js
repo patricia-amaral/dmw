@@ -8,6 +8,7 @@ const knex = require('knex')({
    module.exports = knex;
 
 const knex = require('./db');
+
 async function criarTabelas() {
   const existeUsuarios = await knex.schema.hasTable('usuarios');
   if (!existeUsuarios) {
