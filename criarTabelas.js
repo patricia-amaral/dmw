@@ -1,6 +1,7 @@
 const knex = require('./db');
 
 async function criarTabelas() {
+try {
   const existeUsuarios = await knex.schema.hasTable('usuarios');
   if (!existeUsuarios) {
     await knex.schema.createTable('usuarios', table => {
@@ -21,6 +22,15 @@ async function criarTabelas() {
     });
   }
   console.log("Tabelas criadas ou já existem");
+} catch (error) {
+  console.error("Erro ao criar tabelas:", error);
+} finally {
   process.exit();
- }
+}
+}
+table.integer('usuario_id')
+     .references('id')
+     .inTable('usuarios')
+     .onDelete('CASCADE');
+     
  criarTabelas()
