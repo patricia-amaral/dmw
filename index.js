@@ -1,5 +1,5 @@
 const express = require('express');
-//const knex = require('./db');
+const knex = require('./db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -45,6 +45,7 @@ app.post('/login', async (req, res) => {
     });
     res.status(201).json({ mensagem: "Mensagem criada" });
    });
+   
    app.get('/mensagens', async (req, res) => {
     const mensagens = await knex('mensagens')
       .join('usuarios', 'usuarios.id', '=', 'mensagens.usuario_id')
@@ -67,16 +68,16 @@ app.post('/login', async (req, res) => {
 //   }
 // });
 
-  app.get('/usuarios', async (req, res) => {
-    const usuarios = await knex('usuarios').select('*');
-    res.json(usuarios);
-   });
+  // app.get('/usuarios', async (req, res) => {
+  //   const usuarios = await knex('usuarios').select('*');
+  //   res.json(usuarios);
+  //  });
 
-   app.post('/usuarios', async (req, res) => {
-    const { nome, email } = req.body;
-    await knex('usuarios').insert({ nome, email });
-    res.status(201).json({ mensagem: 'Usuário criado com sucesso' });
-   });
+  //  app.post('/usuarios', async (req, res) => {
+  //   const { nome, email } = req.body;
+  //   await knex('usuarios').insert({ nome, email });
+  //   res.status(201).json({ mensagem: 'Usuário criado com sucesso' });
+  //  });
 
    app.listen(3000, () => {
     console.log('Servidor rodando em http://localhost:3000');
