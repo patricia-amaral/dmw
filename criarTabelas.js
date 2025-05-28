@@ -28,9 +28,5 @@ try {
   process.exit();
 }
 }
-table.integer('usuario_id')
-     .references('id')
-     .inTable('usuarios')
-     .onDelete('CASCADE');
-     
+  
  criarTabelas()
